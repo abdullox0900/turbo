@@ -65,7 +65,7 @@ a {
     height: 56px;
     box-shadow: 0 0 120px 0 rgba(139, 92, 246, 0.4), 0 0 80px 0 rgba(139, 92, 246, 0.6), 0 0 40px 0 rgba(139, 92, 246, 0.8);
     background: #8b5cf6;
-    animation: bounce-scale 1.3s infinite;
+    animation: bounce-scale 4s infinite;
 }
 
 @keyframes pulse-opacity {
@@ -107,18 +107,40 @@ a {
     animation: ping-scale 1.3s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-@keyframes glow-text {
+@keyframes float-up-down {
 
     0%,
     100% {
-        text-shadow: 0 0 10px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-opacity-glow {
+
+    0%,
+    100% {
         opacity: 0.5;
     }
 
     50% {
-        text-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 50px rgba(139, 92, 246, 0.8), 0 0 100px rgba(139, 92, 246, 0.4);
         opacity: 1;
     }
+}
+
+.animate-pulse-slow {
+    animation: 4s cubic-bezier(.4, 0, .6, 1) infinite pulse-opacity-glow;
+}
+
+.animate-float {
+    animation: float-up-down 6s ease-in-out infinite;
+}
+
+.text-glow-purple-strong {
+    text-shadow: 0 0 30px #8b5cf6, 0 0 60px #8b5cf6cc;
 }
 
 @keyframes glow-button {
@@ -134,7 +156,8 @@ a {
 }
 
 .text-glow-animate {
-    animation: glow-text 3s ease-in-out infinite;
+    animation: 3s cubic-bezier(.4, 0, .6, 1) infinite pulse-opacity-glow;
+    text-shadow: 0 0 30px #8b5cf6, 0 0 60px #8b5cf6cc;
 }
 
 .button-glow-animate {

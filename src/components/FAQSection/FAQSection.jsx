@@ -112,7 +112,7 @@ export default function FAQSection() {
           </div>
 
           <div className="relative flex items-center justify-center max-[1024px]:hidden">
-            <img src={faqtCenter} alt="" />
+            <img src={faqtCenter} alt="" className="animate-float" />
 
             <div 
               className="absolute top-8 right-1 oval-style rounded-full flex items-center justify-center"
