@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="max-w-[1136px] mx-auto">
         <div className="flex items-center justify-between max-[768px]:flex-col-reverse max-[768px]:gap-[80px]">
           <div className="z-10">
-            <h1 className="text-[42px] font-light text-white mb-[16px] leading-[60px]">
+            <h1 className="text-[52px] font-light text-white mb-[16px] leading-[60px]">
               Ваш интернет <br /> будет работать <br />
             <span className="text-[52px] font-light text-[#8B5CF6] text-glow-animate">быстро и стабильно</span>
             </h1>
