@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           <div className="relative flex items-center justify-center">
-            <img src={center} alt="" />
+            <img src={center} alt="" className="animate-float" />
 
             <div 
               className="absolute top-8 right-5 oval-style rounded-full flex items-center justify-center"

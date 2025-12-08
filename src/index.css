@@ -131,6 +131,18 @@ a {
     }
 }
 
+@keyframes text-glow-safari {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 .animate-pulse-slow {
     animation: 4s cubic-bezier(.4, 0, .6, 1) infinite pulse-opacity-glow;
 }
@@ -156,8 +168,16 @@ a {
 }
 
 .text-glow-animate {
-    animation: 3s cubic-bezier(.4, 0, .6, 1) infinite pulse-opacity-glow;
+    animation: 3s cubic-bezier(.4, 0, .6, 1) infinite text-glow-safari;
     text-shadow: 0 0 30px #8b5cf6, 0 0 60px #8b5cf6cc;
+    -webkit-text-shadow: 0 0 30px #8b5cf6, 0 0 60px #8b5cf6cc;
+    /* filter: drop-shadow(0 0 30px #8b5cf6) drop-shadow(0 0 60px #8b5cf6cc); */
+    -webkit-filter: drop-shadow(0 0 100px #8b5cf6) drop-shadow(0 0 120px #8b5cf6cc);
+    will-change: opacity;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .button-glow-animate {
