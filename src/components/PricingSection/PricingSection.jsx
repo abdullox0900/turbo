@@ -64,7 +64,12 @@ export default function PricingSection() {
             return (
             <div
               key={plan.id}
-              style={backgroundStyles[index]}
+                style={{
+                  ...backgroundStyles[index],
+                  willChange: 'transform',
+                  transform: 'translateZ(0)',
+                  WebkitTransform: 'translateZ(0)'
+                }}
               className={`relative rounded-3xl p-[24px] backdrop-blur-sm ${plan.borderColor} transition-all duration-300`}
             >
               <div className='max-[425px]:flex flex-row-reverse justify-between'>
@@ -90,9 +95,11 @@ export default function PricingSection() {
               </div>
               {/* Button */}
               <button
-                className={`${plan.buttonStyle} max-[550px]:!w-full px-[20px] py-[17px] rounded-[16px] font-medium text-lg mb-[16px] transition-all duration-300 button-glow-animate`}
+                  className={`relative ${plan.buttonStyle} max-[550px]:!w-full px-[20px] py-[17px] rounded-[16px] font-medium text-lg mb-[16px] transition-all duration-300 button-glow-animate`}
               >
-                {plan.buttonText}
+                  <span className="relative z-10" style={{ transform: 'translateZ(0)', willChange: 'auto' }}>
+                    {plan.buttonText}
+                  </span>
               </button>
 
               {/* Note */}

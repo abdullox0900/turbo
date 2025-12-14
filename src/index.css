@@ -148,7 +148,7 @@ a {
 }
 
 .animate-float {
-    animation: float-up-down 6s ease-in-out infinite;
+    animation: float-up-down 4s infinite;
 }
 
 .text-glow-purple-strong {
@@ -180,9 +180,20 @@ a {
     -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 435px) {
+    .text-glow-animate {
+        text-shadow: none;
+        -webkit-text-shadow: none;
+        -webkit-filter: none;
+        filter: none;
+    }
+}
+
 .button-glow-animate {
     animation: glow-button 3s ease-in-out infinite;
-
+    will-change: box-shadow;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .testimonials-oval {
