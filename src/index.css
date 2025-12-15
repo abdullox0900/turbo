@@ -60,12 +60,27 @@ a {
     }
 }
 
+@keyframes float-up-down-delayed {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .oval-style {
     width: 56px;
     height: 56px;
     box-shadow: 0 0 120px 0 rgba(139, 92, 246, 0.4), 0 0 80px 0 rgba(139, 92, 246, 0.6), 0 0 40px 0 rgba(139, 92, 246, 0.8);
     background: #8b5cf6;
-    animation: bounce-scale 4s infinite;
+    animation: float-up-down-delayed 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 0.5s;
 }
 
 @keyframes pulse-opacity {
@@ -108,14 +123,16 @@ a {
 }
 
 @keyframes float-up-down {
-
-    0%,
-    100% {
+    0% {
         transform: translateY(0);
     }
 
     50% {
         transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
 
@@ -148,7 +165,8 @@ a {
 }
 
 .animate-float {
-    animation: float-up-down 4s infinite;
+    animation: float-up-down 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 0s;
 }
 
 .text-glow-purple-strong {

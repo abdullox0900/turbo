@@ -64,8 +64,9 @@ export default function ConceptSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button
-            className="relative button-style  text-white !px-[20px] !py-[17px] !rounded-[16px] font-medium text-lg transition-all duration-300 group button-glow-animate"
+          <a
+            href="#pricing"
+            className="relative button-style text-white !px-[20px] !py-[17px] !rounded-[16px] font-medium text-lg transition-all duration-300 group button-glow-animate text-center"
           >
             <span className="relative z-10">Купить Турбо Интернет</span>
             <div
@@ -74,7 +75,7 @@ export default function ConceptSection() {
                 boxShadow: '0 0 70px rgba(139, 92, 246, 0.8), 0 0 120px rgba(139, 92, 246, 0.4)',
               }}
             />
-          </button>
+          </a>
         </div>
       </div>
     </section>

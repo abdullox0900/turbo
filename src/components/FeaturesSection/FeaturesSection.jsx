@@ -74,8 +74,9 @@ export default function FeaturesSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button
-            className="relative button-style text-white !px-[20px] !py-[17px] !rounded-[16px] font-medium text-lg button-glow-animate transition-all duration-300 group"
+          <a
+            href="#pricing"
+            className="relative button-style text-white !px-[20px] !py-[17px] !rounded-[16px] font-medium text-lg button-glow-animate transition-all duration-300 group text-center"
             style={{
               boxShadow: '0 0 50px rgba(139, 92, 246, 0.6), 0 0 100px rgba(139, 92, 246, 0.3)',
             }}
@@ -87,7 +88,7 @@ export default function FeaturesSection() {
                 boxShadow: '0 0 70px rgba(139, 92, 246, 0.8), 0 0 120px rgba(139, 92, 246, 0.4)',
               }}
             />
-          </button>
+          </a>
         </div>
       </div>
 

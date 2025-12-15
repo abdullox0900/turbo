@@ -13,9 +13,9 @@ export default function Header() {
         </div>
 
         {/* Купить Button */}
-        <button className="button-style">
+        <a href="#pricing" className="button-style">
           Купить
-        </button>
+        </a>
       </div>
     </header>
   );

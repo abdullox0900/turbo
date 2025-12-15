@@ -13,35 +13,35 @@ export default function TestimonialsSection() {
       name: 'Евгения',
       date: '5 ноября, 2024',
       rating: 5,
-      text: '«Хороший сервис, всё работает быстро. Купила для семьи, чтобы всегда была связь»',
+      text: '«Стабильный интернет даже вечером, когда все дома. Дети смотрят стримы, я работаю — без лагов»',
     },
     {
       id: 2,
-      name: 'Евгения',
-      date: '5 ноября, 2024',
+      name: 'Илья',
+      date: '4 ноября, 2024',
       rating: 5,
-      text: '«Хороший сервис, всё работает быстро. Купила для семьи, чтобы всегда была связь»',
+      text: '«Подключил для дачи: скорость держится, видеозвонки в Zoom не разваливаются. Настройка заняла 5 минут»',
     },
     {
       id: 3,
-      name: 'Евгения',
-      date: '5 ноября, 2024',
+      name: 'Мария',
+      date: '3 ноября, 2024',
       rating: 5,
-      text: '«Хороший сервис, всё работает быстро. Купила для семьи, чтобы всегда была связь»',
+      text: '«Работаю на фрилансе, важна стабильность. С Турбо Интернетом загрузки проектов и заливка файлов идут быстро»',
     },
     {
       id: 4,
       name: 'Дмитрий',
       date: '3 ноября, 2024',
       rating: 5,
-      text: '«Отличная скорость, без проблем смотрю видео в HD качестве»',
+      text: '«Перешёл с другого провайдера: скорость выше, пинг ниже. Можно играть онлайн без нервов»',
     },
     {
       id: 5,
       name: 'Анна',
       date: '1 ноября, 2024',
       rating: 5,
-      text: '«Простая настройка, работает на всех устройствах»',
+      text: '«Удобное приложение и поддержка отвечает быстро. Скорость стабильная даже на нескольких устройствах сразу»',
     },
   ];
 
@@ -191,8 +191,9 @@ export default function TestimonialsSection() {
 
       <div className="max-w-[1136px] mx-auto px-6">
         <div className="flex justify-center">
-          <button
-            className="relative button-style !px-[20px] !py-[17px] text-white !rounded-[16px] font-medium text-lg transition-all duration-300 group button-glow-animate"
+          <a
+            href="#pricing"
+            className="relative button-style !px-[20px] !py-[17px] text-white !rounded-[16px] font-medium text-lg transition-all duration-300 group button-glow-animate text-center"
           >
             <span className="relative z-10">Купить Турбо Интернет</span>
             <div
@@ -201,7 +202,7 @@ export default function TestimonialsSection() {
                 boxShadow: '0 0 40px 0 rgba(139, 92, 246, 0.8)',
             }}
             />
-          </button>
+          </a>
         </div>
       </div>
 

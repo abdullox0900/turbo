@@ -49,7 +49,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[#A3A3A3] font-light hover:text-white transition-colors text-sm">
+                <a href="/offer" className="text-[#A3A3A3] font-light hover:text-white transition-colors text-sm">
+                  Договор оферты
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="text-[#A3A3A3] font-light hover:text-white transition-colors text-sm">
                   Политика конфиденциальности
                 </a>
               </li>

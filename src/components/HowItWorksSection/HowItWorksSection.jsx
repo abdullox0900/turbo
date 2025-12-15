@@ -7,12 +7,12 @@ export default function HowItWorksSection() {
 
     const getEndpoint = (location) => {
         const endpoints = {
-            'Амстердам': 'ams-01.vanyavps.com:51820',
-            'Франкфурт': 'fra-01.vanyavps.com:51820',
-            'Мадрид': 'mad-01.vanyavps.com:51820',
-            'Лондон': 'lon-01.vanyavps.com:51820',
+            'Амстердам': 'ams-01.turbo-internet.com:51820',
+            'Франкфурт': 'fra-01.turbo-internet.com:51820',
+            'Мадрид': 'mad-01.turbo-internet.com:51820',
+            'Лондон': 'lon-01.turbo-internet.com:51820',
         };
-        return endpoints[location] || 'lon-01.vanyavps.com:51820';
+        return endpoints[location] || 'lon-01.turbo-internet.com:51820';
     };
 
     return (

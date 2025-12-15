@@ -11,15 +11,16 @@ export default function Hero() {
           <div className="z-10">
             <h1 className="text-[52px] font-light text-white mb-[16px] leading-[60px] max-[435px]:text-[40px]">
               Ваш интернет <br /> будет работать <br />
-              <span className="text-[52px] font-light text-[#8B5CF6] text-glow-animate max-[435px]:text-[40px] max-[435px]:!shadow-none">быстро и стабильно</span>
+              <span className="text-[52px] font-light text-[#8B5CF6] text-glow-animate max-[435px]:text-[40px]">быстро и стабильно</span>
             </h1>
             
             <p className="text-[#A3A3A3] text-[18px] mb-[32px]">
               Включите ускоритель YouTube и соцсетей за 1 минуту
             </p>
 
-            <button 
-              className="relative button-style max-[768px]:!w-full !px-[20px] !py-[18px] !rounded-[16px] transition-all duration-300 group button-glow-animate"
+            <a
+              href="#pricing"
+              className="relative button-style max-[768px]:!w-full !px-[20px] !py-[18px] !rounded-[16px] transition-all duration-300 group button-glow-animate text-center"
             >
               <span className="relative z-10">Купить Турбо Интернет</span>
               <div 
@@ -28,7 +29,7 @@ export default function Hero() {
                   boxShadow: '0 0 60px rgba(139, 92, 246, 0.8), 0 0 100px rgba(139, 92, 246, 0.4)'
                 }}
               />
-            </button>
+            </a>
           </div>
 
           <div className="relative flex items-center justify-center">
