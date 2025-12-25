@@ -4,12 +4,64 @@ import { pricingPlans } from '../../data/pricingPlans';
 export default function PaymentPage({ planSlug }) {
   const [email, setEmail] = useState('');
   const [isAgreed, setIsAgreed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const selectedPlan = useMemo(() => {
     return pricingPlans.find((plan) => plan.slug === planSlug) || pricingPlans[0];
   }, [planSlug]);
 
   const isFormValid = isAgreed && email.trim().length > 3;
+
+  const handlePay = async () => {
+    if (!isFormValid || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const apiBaseUrl = import.meta?.env?.VITE_API_BASE_URL || '';
+      const response = await fetch(`${apiBaseUrl}/api/payments/create`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          planSlug: selectedPlan.slug,
+          email: email.trim(),
+        }),
+      });
+
+      if (!response.ok) {
+        let serverMessage = '';
+        try {
+          const errJson = await response.json();
+          serverMessage = errJson?.message || '';
+        } catch {
+          serverMessage = '';
+        }
+        throw new Error(serverMessage || `Request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+      const confirmationUrl = data?.confirmationUrl;
+      const paymentId = data?.paymentId;
+      if (!confirmationUrl) {
+        throw new Error('Invalid response: confirmationUrl is missing');
+      }
+
+      if (paymentId) {
+        try {
+          window.localStorage.setItem('lastPaymentId', String(paymentId));
+        } catch {
+          // ignore
+        }
+      }
+
+      window.location.href = confirmationUrl;
+    } catch (e) {
+      setSubmitError(e?.message || 'Payment initiation failed');
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main className="bg-black min-h-screen text-white px-6 py-12">
@@ -70,15 +122,22 @@ export default function PaymentPage({ planSlug }) {
               </label>
 
               <button
-                disabled={!isFormValid}
+                type="button"
+                onClick={handlePay}
+                disabled={!isFormValid || isSubmitting}
                 className={`w-full rounded-2xl px-5 py-4 text-lg font-semibold transition-all duration-300 ${
-                  isFormValid
+                  isFormValid && !isSubmitting
                     ? 'bg-[#8B5CF6] text-white button-glow-animate'
                     : 'bg-[#1f1f1f] text-[#6b6b6b] cursor-not-allowed'
                 }`}
               >
-                Перейти к оплате
+                {isSubmitting ? 'Перенаправляем…' : 'Перейти к оплате'}
               </button>
+              {submitError ? (
+                <p className="text-sm text-red-400 mt-3">
+                  {submitError}
+                </p>
+              ) : null}
               <p className="text-xs text-[#555]">
                 Нажимая кнопку, вы переходите на защищенную страницу оплаты банка. Списание по тарифу выполняется после подтверждения платежа.
               </p>

@@ -31,19 +31,16 @@ export default function ConceptSection() {
   return (
     <section className="relative bg-lianer py-20 px-[20px] max-[425px]:py-[50px]">
       <div className="max-w-[1136px] mx-auto">
-        {/* Sarlavha */}
         <h2 className="text-[42px] max-[425px]:text-[28px] font-light text-white text-center mb-[47px]">
           Концепция Турбо Интернет
         </h2>
 
-        {/* Concept Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mb-[56px]">
           {concepts.map((concept) => (
             <div
               key={concept.id}
               className="bg-[#8B5CF6] rounded-3xl py-[26px] pt-[5px] px-[16px] backdrop-blur-sm border border-[rgba(139,92,246,0.4)] transition-all duration-300 group"
             >
-              {/* Rasm konteyner */}
               <div className="flex justify-center mb-1 max-[425px]:mb-0">
                   <img 
                     src={concept.image} 
@@ -52,7 +49,6 @@ export default function ConceptSection() {
                   />
               </div>
 
-              {/* Matn */}
               <div className="text-center">
                 <h3 className="text-[18px] max-[425px]:text-[14px] font-light text-white leading-tight">
                   {concept.title}
@@ -62,7 +58,6 @@ export default function ConceptSection() {
           ))}
         </div>
 
-        {/* CTA Button */}
         <div className="flex justify-center">
           <a
             href="#pricing"

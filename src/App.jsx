@@ -12,6 +12,8 @@ import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy"
 import PaymentPage from "./components/PaymentPage/PaymentPage"
 import { pricingPlans } from "./data/pricingPlans"
 import OfferPage from "./components/OfferPage/OfferPage"
+import PaymentSuccessPage from "./components/PaymentSuccessPage/PaymentSuccessPage"
+import PaymentFailedPage from "./components/PaymentFailedPage/PaymentFailedPage"
 
 function App() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname.toLowerCase() : ''
@@ -19,9 +21,31 @@ function App() {
   const searchParams = typeof window !== 'undefined' ? new URLSearchParams(search) : null
   const planSlug = searchParams?.get('plan') || pricingPlans[0].slug
 
+  const isPaymentSuccessPage = pathname.includes('payment-success')
+  const isPaymentFailedPage = pathname.includes('payment-failed')
   const isPaymentPage = pathname.includes('payment')
   const isPrivacyPage = pathname.includes('privacy')
   const isOfferPage = pathname.includes('offer')
+
+  if (isPaymentSuccessPage) {
+    return (
+      <>
+        <Header />
+        <PaymentSuccessPage />
+        <Footer />
+      </>
+    )
+  }
+
+  if (isPaymentFailedPage) {
+    return (
+      <>
+        <Header />
+        <PaymentFailedPage />
+        <Footer />
+      </>
+    )
+  }
 
   if (isPaymentPage) {
     return (
